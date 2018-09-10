@@ -21,7 +21,7 @@
 	},
 	"travelNotesAsLeafletControl": false,
 	"contactMail" : "../blog/pages/contact",
-	"donate": true,
+	"donate": false,
 	"scaleControl": 
 	{
 		"imperial":false,
@@ -39,5 +39,6 @@
 			"maximumAge": 5000, 
 			"timeout": "60000"
 		}
-	}
+	},
+	"toolbarAlwaysVisible":false
 }

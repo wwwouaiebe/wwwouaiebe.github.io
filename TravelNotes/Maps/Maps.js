@@ -350,7 +350,8 @@ Changes:
 					maximumAge        : 0, 
 					timeout           : Infinity
 				}
-			}
+			},
+			toolbarAlwaysVisible:false
 		};
 		
 		var _Map = null; // the map
@@ -883,12 +884,14 @@ Changes:
 			_Map.on ( 
 				'travelnotesfileloaded',
 				function ( event ) {
-					_MouseControl.name = event.name || '';
-					if ( event.readOnly ) {
+					_MouseControl.name = event.name || ''; // file name
+					if ( event.readOnly && ! _Config.toolbarAlwaysVisible ) {
 						if ( document.getElementById ( "mapsToolbar" ) ) {
 							document.getElementById ( "mapsToolbar" ).style.visibility = "hidden";
 							document.getElementById ( "mapsToolbar" ).style.width = "0";
 						}
+					}
+					if ( event.readOnly ) {
 						if ( document.getElementById ( "mapsMouseControl" ) ) {
 							document.getElementById ( "mapsMouseControl" ).style.visibility = "hidden";
 						}
